@@ -6,7 +6,7 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron .",
+    "start": "electron app/.",
     "build": "electron-packager ./app/ DesktopNotifier --platform=win32 --ignore=node_modules --ignore=app/node_modules --ignore=dist --igrnore=build --arch=x64 --overwrite  --app-bundle-id=DesktopNotifier",
     "pack": "build --dir",
     "dist": "build -w --x64"
