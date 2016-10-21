@@ -7,8 +7,6 @@ const ipcMain = require('electron').ipcMain;
 
 const iconPath = path.join(__dirname, 'icon32.png');
 
-const test = require('electron-squirrel-startup');
-
 let mainWindow;
 let tray;
 
