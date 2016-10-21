@@ -1,0 +1,17 @@
+{
+  "name": "electron-desktop-notifier",
+  "version": "1.0.0",
+  "description": "Small desktop application that send and receive messages als desktop balloon/notification",
+  "projectName": "DesktopNotifier",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "postinstall": "install-app-deps",
+  "author": "Philipp Kueffner",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^1.7.4"
+  }
+}

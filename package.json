@@ -1,0 +1,28 @@
+{
+  "name": "electron-desktop-notifier",
+  "version": "1.0.0",
+  "description": "Small desktop application that send and receive messages als desktop balloon/notification",
+  "projectName": "DesktopNotifier",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "build": "electron-packager ./app/ DesktopNotifier --platform=win32 --ignore=node_modules --ignore=app/node_modules --ignore=dist --igrnore=build --arch=x64 --overwrite  --app-bundle-id=DesktopNotifier",
+    "pack": "build --dir",
+    "dist": "build -w --x64"
+  },
+  "build": {
+    "appId": "DesktopNotifier",
+    "win": {
+      "iconUrl": ""
+    }
+  },
+  "author": "Philipp Kueffner",
+  "license": "ISC",
+  "devDependencies": {
+    "electron-packager": "^7.1.0",
+    "electron": "^1.2.5",
+    "electron-winstaller": "^2.3.4",
+    "jquery": "^1.7.4"
+  }
+}

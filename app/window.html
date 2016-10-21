@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>m3ssang3r</title>
+		<meta content="text/html; charset=ISO-8859-1">
+		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+		<script src="./jquery.min.js"></script>
+		<style>
+			body {
+				background-color: #e6e6e6;
+				font-family: 'Source Sans Pro', sans-serif;
+			}
+			.links {
+				width: 100%;
+				display: block;
+				text-align: center;
+				margin-top: 5%;
+			}
+
+			.links a {
+				background-color: #f40e89;
+			  color: #212121;
+			  margin: 20px;
+			  padding: 20px;
+			  text-decoration: none;
+				font-weight: bold;
+			}
+			.links a:hover {
+				background-color: #f40e89;
+			  color: #FFFFFF;
+			}
+			section {
+				display: block;
+				background-color: #ffffff;
+				padding: 15px;
+				margin:20px;
+				border-radius: 5px;
+			}
+			ul{
+				display:inline-block;
+			}
+			li{
+				float:left;
+				margin: 0 10px 0 10px;
+				list-style: none;
+			}
+			li a {
+				text-decoration: none;
+				color: gray;
+				border: 1px solid #e6e6e6;
+				padding:20px;
+			}
+			li a:hover{
+				color:#000000;
+				border-color: gray;
+			}
+			input{
+				border: 1px solid gray;
+				padding: 6px;
+			}
+		</style>
+	</head>
+	<body>
+
+		<section id="user">
+			Username: <input type="text" value="" name="username" />
+		</section>
+
+		<section>
+			<h2>Kaffee:</h2>
+			<ul>
+				<li>
+					<a href="#" class="coffeeInProgress" msg="Kaffee läuft!">läuft!</a>
+				</li>
+				<li>
+					<a href="#" class="coffeeReady"  msg="Kaffee ist fertig!!">fertig!</a>
+				</li>
+				<li>
+					<a href="#" class="coffeeOut" msg="Kaffee ist alle! Wer war DAS!?">alle!</a>
+				</li>
+			</ul>
+
+		</section>
+
+		<section id="user">
+			Nachricht: <input type="text" value="" name="nachricht" /> <button name="msgSend">Senden</button>
+		</section>
+
+		<script src="window.js"></script>
+	</body>
+</html>
