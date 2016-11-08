@@ -1,28 +1,107 @@
 {
   "name": "electron-desktop-notifier",
-  "version": "1.0.0",
   "description": "Small desktop application that send and receive messages als desktop balloon/notification",
-  "projectName": "DesktopNotifier",
+  "version": "1.1.0",
+  "author": {
+    "name": "Philipp Kueffner",
+    "email": "diepille88@gmail.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DiePille/electron-desktop-notifier.git"
+  },
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron app/.",
-    "build": "electron-packager ./app/ DesktopNotifier --platform=win32 --ignore=node_modules --ignore=app/node_modules --ignore=dist --igrnore=build --arch=x64 --overwrite  --app-bundle-id=DesktopNotifier",
+    "test": "standard && mocha --recursive",
+    "unit": "standard && mocha test/unit --recursive",
+    "integration": "standard && mocha test/integration --recursive",
+    "coverage": "istanbul cover node_modules/.bin/_mocha -- --recursive",
+    "depcheck": "dependency-check app --entry main.js --unused --no-dev",
+    "lint": "standard",
+    "start": "electron ./app/main",
+    "clean:linux": "rimraf dist/linux* dist/*.deb dist/*.AppImage",
+    "clean:osx": "rimraf dist/mac",
+    "clean:win": "rimraf dist/win*",
+    "clean": "npm run clean:linux && npm run clean:win && npm run clean:osx",
+    "pack:osx": "build --dir --mac",
+    "pack:win": "build --dir --win --x64",
+    "pack:linux": "build --dir --linux --x64",
     "pack": "build --dir",
-    "dist": "build -w --x64"
+    "prebuild": "node build/target.js",
+    "build:osx": "npm run prebuild && build --mac && npm run postbuild",
+    "build:win": "npm run prebuild && build --win --x64 && npm run postbuild",
+    "build:linux": "npm run prebuild && build --linux deb AppImage --x64 && npm run postbuild",
+    "build": "build",
+    "postbuild": "node build/target.js --clean",
+    "postinstall": "install-app-deps"
   },
+  "standard": {
+    "globals": [
+      "describe",
+      "after",
+      "it",
+      "before",
+      "beforeEach",
+      "afterEach",
+      "rm",
+      "cp"
+    ]
+  },
+  "pre-commit": [
+    "lint",
+    "unit"
+  ],
+  "keywords": [
+    "electron-app",
+    "electron",
+    "desktop",
+    "notifier"
+  ],
   "build": {
-    "appId": "DesktopNotifier",
+    "appId": "com.diepille.desktopnotifier",
+    "productName": "DesktopNotifier",
+    "dmg": {
+      "iconSize": 120,
+      "iconTextSize": 14,
+      "contents": [
+        {
+          "x": 478,
+          "y": 170,
+          "type": "link",
+          "path": "/Applications"
+        },
+        {
+          "x": 130,
+          "y": 170,
+          "type": "file"
+        }
+      ]
+    },
+    "mac": {
+      "category": "public.app-category.business"
+    },
+    "linux": {
+      "category": "Messanger"
+    },
     "win": {
-      "iconUrl": ""
     }
   },
-  "author": "Philipp Kueffner",
-  "license": "ISC",
   "devDependencies": {
-    "electron-packager": "^7.1.0",
-    "electron": "^1.2.5",
-    "electron-winstaller": "^2.3.4",
-    "jquery": "^1.7.4"
+    "async": "^2",
+    "chai": "^3",
+    "chai-as-promised": "^6",
+    "dependency-check": "^2",
+    "electron-builder": "^7",
+    "electron-prebuilt": "^1",
+    "istanbul": "^0.4",
+    "mocha": "^3",
+    "pre-commit": "^1",
+    "rimraf": "^2",
+    "shelljs": "^0.7",
+    "spectron": "^3",
+    "standard": "^8",
+    "jquery": "^1.7.4",
+    "auto-launch": "^5"
   }
 }

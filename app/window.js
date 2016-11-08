@@ -3,7 +3,7 @@ var $ = require('jquery');
 var electron = require('electron');
 const ipcRenderer = electron.ipcRenderer;
 
-var serverUrl = "http://localhost/notifications/server/";
+var serverUrl = "http://itpc25/notifications/server/";
 
 function getUpdate()
 {

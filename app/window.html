@@ -1,8 +1,8 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>m3ssang3r</title>
-		<meta content="text/html; charset=ISO-8859-1">
+		<title>Desktop Notifier</title>
+		<meta content="text/html; charset=UTF-8">
 		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
 		<script src="./jquery.min.js"></script>
 		<style>
@@ -16,7 +16,6 @@
 				text-align: center;
 				margin-top: 5%;
 			}
-
 			.links a {
 				background-color: #f40e89;
 			  color: #212121;
@@ -70,7 +69,7 @@
 			<h2>Kaffee:</h2>
 			<ul>
 				<li>
-					<a href="#" class="coffeeInProgress" msg="Kaffee lÃ¤uft!">lÃ¤uft!</a>
+					<a href="#" class="coffeeInProgress" msg="Kaffee läuft!">läuft!</a>
 				</li>
 				<li>
 					<a href="#" class="coffeeReady"  msg="Kaffee ist fertig!!">fertig!</a>
@@ -88,4 +87,8 @@
 
 		<script src="window.js"></script>
 	</body>
+	<script>
+    // You can also require other files to run in this process
+    require('./assets/js/notifications.js')
+  </script>
 </html>

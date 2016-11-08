@@ -1,17 +1,28 @@
 {
   "name": "electron-desktop-notifier",
-  "version": "1.0.0",
+  "productName": "DesktopNotifier",
   "description": "Small desktop application that send and receive messages als desktop balloon/notification",
-  "projectName": "DesktopNotifier",
-  "main": "main.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
+  "version": "1.1.0",
+  "homepage": "https://github.com/DiePille/electron-desktop-notifier",
+  "author": {
+    "name": "Philipp Kueffner",
+    "email": "diepille88@gmail.com"
   },
-  "postinstall": "install-app-deps",
-  "author": "Philipp Kueffner",
-  "license": "ISC",
+  "license": "MIT",
+  "main": "main.js",
+  "electronVersion": "1.0.0",
   "dependencies": {
-    "jquery": "^1.7.4"
+    "devtron": "^1",
+    "electron-debug": "^1",
+    "electron-is-dev": "^0.1",
+    "lodash": "^4",
+    "jquery": "^1.7.4",
+    "auto-launch": "^5"
+  },
+  "config": {
+    "url": "window.html",
+    "update": {
+      "url": false
+    }
   }
 }
