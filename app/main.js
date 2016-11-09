@@ -12,7 +12,7 @@ const Tray = require('electron').Tray
 
 const AutoLaunch = require('auto-launch')
 
-const iconPath = path.join(__dirname, 'icon.ico');
+const iconPath = path.join(__dirname, '/icon32.png');
 
 // Use system log facility, should work on Windows too
 require('./lib/log')(pjson.productName || 'DesktopNotifier')
