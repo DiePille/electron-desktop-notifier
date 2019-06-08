@@ -101,7 +101,7 @@
     "shelljs": "^0.7",
     "spectron": "^3",
     "standard": "^8",
-    "jquery": "^3.4.0",
+    "jquery": ">=3.4.0",
     "auto-launch": "^5"
   }
 }
